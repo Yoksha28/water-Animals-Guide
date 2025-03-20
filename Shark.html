@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #0288d1;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #0288d1;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #01579b;
+        }
+        button {
+            background-color: #0288d1;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #01579b;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #002f6c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Shark">
+        <div class="info">
+            <h2>Shark</h2>
+            <p>Sharks are powerful predators that have existed for over 400 million years. They have unique senses that make them highly effective hunters.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Sharks have multiple rows of teeth that continually replace themselves.",
+                "Some shark species must keep swimming to breathe.",
+                "The great white shark can detect a drop of blood in 25 gallons of water.",
+                "Sharks' skeletons are made of cartilage, not bone."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

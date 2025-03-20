@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobster Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #fbe9e7;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #e64a19;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #e64a19;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #bf360c;
+        }
+        button {
+            background-color: #e64a19;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #bf360c;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #5d4037;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://ca-times.brightspotcdn.com/dims4/default/d4b1c2d/2147483647/strip/true/crop/600x401+0+0/resize/1200x802!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F2a%2F23%2Fd7c0c619eb99be8eef0dc2c1623f%2Fla-xpm-photo-2012-nov-12-la-dd-test-kitchen-tips-keeping-lobster-tail-straight-20121111" alt="Lobster">
+        <div class="info">
+            <h2>Lobster</h2>
+            <p>Lobsters are large marine crustaceans with strong claws, known for their tough shells and delicious taste.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Lobsters can live up to 100 years.",
+                "They taste with their legs and chew with their stomachs.",
+                "A lobster’s brain is located in its throat.",
+                "Lobsters can regenerate lost claws and legs."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

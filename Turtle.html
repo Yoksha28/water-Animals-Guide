@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f2f1;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #8bc34a;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #8bc34a;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #558b2f;
+        }
+        button {
+            background-color: #8bc34a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #558b2f;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #33691e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://th.bing.com/th/id/OIP.5fy_pFAQuDr3Bmi6d674pgHaEz?w=570&h=370&rs=1&pid=ImgDetMain" alt="Turtle">
+        <div class="info">
+            <h2>Turtle</h2>
+            <p>Turtles are reptiles characterized by a bony or cartilaginous shell that acts as a shield. They are known for their slow movement and long lifespan.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Turtles have existed for over 200 million years.",
+                "Sea turtles can hold their breath for up to five hours.",
+                "Some turtles can live to be over 100 years old.",
+                "Turtles have an incredible sense of direction using Earth's magnetic field."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

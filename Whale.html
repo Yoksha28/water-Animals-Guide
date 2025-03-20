@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whale Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #e3f2fd;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #1565c0;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #1565c0;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #0d47a1;
+        }
+        button {
+            background-color: #1565c0;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0d47a1;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://plus.unsplash.com/premium_photo-1724668625323-ccd85574c6b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Whale">
+        <div class="info">
+            <h2>Whale</h2>
+            <p>Whales are the largest marine mammals, known for their incredible size, intelligence, and unique songs used for communication.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "The blue whale is the largest animal ever known to have existed.",
+                "Whales communicate using complex songs and sounds.",
+                "Some whale species migrate thousands of miles each year.",
+                "Whales can hold their breath for over an hour while diving."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

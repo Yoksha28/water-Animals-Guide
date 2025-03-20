@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Animals Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 80%;
+            padding: 8px;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+        }
+        .animal-list {
+            list-style: none;
+            padding: 0;
+        }
+        .animal-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #00796b;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+        }
+        .animal-list li.show {
+            display: block;
+        }
+        .animal-list li:hover {
+            background-color: #004d40;
+        }
+        .btn-container {
+            position: sticky;
+            bottom: 0;
+            background-color: #ffffff;
+            padding: 10px 0;
+            border-top: 2px solid #00796b;
+        }
+        .btn {
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100px;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #004d40;
+        }
+    </style>
+    <script>
+        function filterAnimals() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const animals = document.querySelectorAll('.animal-list li');
+            let found = false;
+
+            animals.forEach(animal => {
+                const name = animal.textContent.toLowerCase();
+                if (name.includes(searchInput)) {
+                    animal.classList.add('show');
+                    found = true;
+                } else {
+                    animal.classList.remove('show');
+                }
+            });
+
+            if (!found && searchInput) {
+                alert(`Sorry, "${searchInput}" is not in our database.`);
+            }
+        }
+
+        function redirectToAnimalPage(animalName) {
+            window.open(`${animalName.toLowerCase()}.html`, '_blank');
+        }
+
+        window.onload = () => {
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('input', filterAnimals);
+            filterAnimals();  // Initialize view to show all animals
+
+            const animals = document.querySelectorAll('.animal-list li');
+            animals.forEach(animal => {
+                animal.addEventListener('click', () => redirectToAnimalPage(animal.textContent));
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Water Animals Guide</h1>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search for an animal...">
+        </div>
+        <ul class="animal-list">
+            <li class="show">Dolphin</li>
+            <li class="show">Turtle</li>
+            <li class="show">Jellyfish</li>
+            <li class="show">Shark</li>
+            <li class="show">Whale</li>
+            <li class="show">Octopus</li>
+            <li class="show">Seahorse</li>
+            <li class="show">Starfish</li>
+            <li class="show">Crab</li>
+            <li class="show">Lobster</li>
+            <li class="show">Anglerfish</li>
+            <li class="show">Gulper Eel</li>
+            <li class="show">Vampire Squid</li>
+            <li class="show">Fangtooth</li>
+            <li class="show">Giant Isopod</li>
+        </ul>
+        <div class="btn-container">
+            <a href="login.html" target="_blank"><button class="btn">Login</button></a>
+            <a href="signin.html" target="_blank"><button class="btn">Sign In</button></a>
+        </div>
+    </div>
+</body>
+</html>

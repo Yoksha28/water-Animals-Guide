@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #4db6ac;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid #4db6ac;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #00796b;
+        }
+        button {
+            background-color: #4db6ac;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00796b;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.istockphoto.com/id/1442686499/photo/closeup-shot-of-a-dolphin-under-the-sea.webp?a=1&b=1&s=612x612&w=0&k=20&c=DJOPBoa1Sw7RW-rJ5r9U3kQq_kgy23fj6ca67Rpa5uk=" alt="Dolphin">
+        <div class="info">
+            <h2>Dolphin</h2>
+            <p>Dolphins are highly intelligent marine mammals that belong to the toothed whale family. They are known for their playful behavior and strong social bonds.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Dolphins use echolocation to navigate and hunt.",
+                "Some dolphins can swim up to 60 km/h.",
+                "Dolphins have been known to help humans in distress at sea.",
+                "There are over 40 species of dolphins worldwide."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

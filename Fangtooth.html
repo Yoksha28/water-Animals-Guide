@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fangtooth Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            margin: 0;
+        }
+        .container {
+            background: #1c1c1c;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #424242;
+        }
+        img {
+            border-radius: 12px;
+            width: 100%;
+            border: 2px solid #424242;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #bdbdbd;
+        }
+        button {
+            background-color: #424242;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #212121;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Anoplogaster_cornuta1.jpg" alt="Fangtooth">
+        <div class="info">
+            <h2>Fangtooth</h2>
+            <p>The fangtooth is a deep-sea predator known for its terrifying appearance and oversized teeth.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "The fangtooth has the largest teeth of any fish relative to its body size.",
+                "Despite its scary look, the fangtooth is harmless to humans.",
+                "Fangtooths can survive at depths over 5000 meters.",
+                "They rely on touch rather than sight to catch prey in the deep sea."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

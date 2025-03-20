@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulper Eel Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #212121;
+            margin: 0;
+        }
+        .container {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #616161;
+        }
+        img {
+            border-radius: 12px;
+            width: 100%;
+            border: 2px solid #616161;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #9e9e9e;
+        }
+        button {
+            background-color: #616161;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #424242;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Gulper_eel.png" alt="Gulper Eel">
+        <div class="info">
+            <h2>Gulper Eel</h2>
+            <p>The gulper eel is a deep-sea fish known for its large mouth and expandable stomach, helping it swallow prey much larger than itself.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "The gulper eel’s mouth can open wide enough to swallow large prey whole.",
+                "It has a bioluminescent tail tip that attracts prey.",
+                "The gulper eel can expand its stomach like a balloon to store food.",
+                "Gulper eels are found at depths of up to 3000 meters."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>

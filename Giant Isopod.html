@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant Isopod Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #3e2723;
+            margin: 0;
+        }
+        .container {
+            background: #5d4037;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            border: 3px solid #795548;
+        }
+        img {
+            border-radius: 12px;
+            width: 100%;
+            border: 2px solid #795548;
+        }
+        .info {
+            margin-top: 15px;
+        }
+        h2 {
+            color: #d7ccc8;
+        }
+        button {
+            background-color: #795548;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4e342e;
+        }
+        #fact {
+            margin-top: 10px;
+            font-style: italic;
+            color: #d7ccc8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://twistedsifter.com/wp-content/uploads/2010/03/underbelly-of-the-giant-isopod.jpg?resize=237" alt="Giant Isopod">
+        <div class="info">
+            <h2>Giant Isopod</h2>
+            <p>The giant isopod is a deep-sea crustacean known for its armored shell and large size.</p>
+            <button onclick="showFact()">Fun Fact</button>
+            <p id="fact"></p>
+        </div>
+    </div>
+
+    <script>
+        function showFact() {
+            const facts = [
+                "Giant isopods can survive for years without food in extreme conditions.",
+                "They are related to common pill bugs and woodlice.",
+                "Giant isopods can grow up to 20 inches in length.",
+                "They are scavengers that feast on dead marine animals."
+            ];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("fact").innerText = randomFact;
+        }
+    </script>
+</body>
+</html>
