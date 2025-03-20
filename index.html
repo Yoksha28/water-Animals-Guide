@@ -93,6 +93,10 @@
            window.open(`${animalName}.html`, '_blank');
         }
 
+        function showAboutUsPrompt() {
+            alert("Welcome to Water Animal Guide!\n\nOur mission is to educate people about water animals and their importance. We are dedicated to:\n• Water Animal Display\n• Educative Content Provisioning\n• Wildlife photography\n\nJoin us to learn more about these amazing creatures!");
+        }
+
         window.onload = () => {
             const searchInput = document.getElementById('search');
             searchInput.addEventListener('input', filterAnimals);
@@ -129,8 +133,7 @@
             <li class="show">Giant Isopod</li>
         </ul>
         <div class="btn-container">
-            <a href="login.html" target="_blank"><button class="btn">Login</button></a>
-            <a href="signin.html" target="_blank"><button class="btn">Sign In</button></a>
+            <button class="btn" onclick="showAboutUsPrompt();">About Us</button>
         </div>
     </div>
 </body>
